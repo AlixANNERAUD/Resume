@@ -22,4 +22,5 @@ jobs:
       - name: Release artifact
         uses: softprops/action-gh-release@v1
         with:
+          name: Compiled resume
           files: Resume.pdf
