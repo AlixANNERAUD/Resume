@@ -7,8 +7,8 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Compile LaTeX document
-        uses: repaction/texlive@main
+        uses: xu-cheng/latex-action@v3
         with:
-          tex_files: |
+          root_file: |
             Resume.tex
     
