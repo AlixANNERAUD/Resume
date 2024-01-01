@@ -1,0 +1,174 @@
+\documentclass[10pt,a4paper,ragged2e,withhyper]{./AltaCV/altacv}
+
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+ 
+\usepackage{paracol}
+
+\ifxetexorluatex
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+\definecolor{SlateGrey}{HTML}{000000}
+\definecolor{LightGrey}{HTML}{000000} 
+\definecolor{DarkPastelRed}{HTML}{4c1d95}
+\definecolor{PastelRed}{HTML}{4c1d95}
+\definecolor{GoldenEarth}{HTML}{4c1d95}
+\definecolor{Purple}{HTML}{4c1d95}
+\colorlet{name}{Purple}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{Purple}
+\colorlet{body}{LightGrey}
+
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+
+\begin{document}
+\name{Alix ANNERAUD}
+\tagline{20 y.o.   student in Computer Science at INSA Rouen Normandie}
+
+\photoL{2.8cm}{Photo transparente.png}
+
+\personalinfo{
+  \homepage{https://alix.anneraud.fr}
+  \email{alix@anneraud.fr}
+  \phone{+33 7 81 85 08 69}
+  \github{AlixANNERAUD}
+  \linkedin{Alix-ANNERAUD}
+  %\location{Rouen, France}\\
+}
+
+\makecvheader
+
+
+\columnratio{0.6}
+
+\begin{paracol}{2}
+  \cvsection{\faBriefcase Experience}
+
+  \cvevent{Assistant to the School-Business Relations Department}{INSA Rouen Normandie}{September 2021 -- Ongoing}{}
+
+  Versatile assistance position:
+  \begin{itemize}
+    \item Collection and valorization of data concerning INSA partner companies.
+    \item Canvassing partner companies for the collection of the apprenticeship tax.
+    \item Administrative management of student files.
+    \item Alumni survey for course certification.
+  \end{itemize}
+
+  \divider
+
+  \cvevent{Intern on production line}{Renault - Cléon factory}{June 2022 (1 month)}{}
+
+  Rotor/stator assembly for electric motor.
+
+  \smallskip
+
+  \cvsection{\faGraduationCap Education}
+
+  \cvevent{Engineering degree in Compute Science}{INSA Rouen Normandie}{Sept 2021 -- Ongoing}{Rouen, Normandie, France}
+
+  \divider
+
+  \cvevent{Scientific baccalaureate (european section) }{Jean-Paul II school}{2021}{Rouen, Normandie, France}
+  Obtained with very good honors.
+
+  \divider
+
+  \cvevent{Cambridge B1 Preliminary}{}{2018}{}
+
+  \smallskip
+
+  \cvsection{Projects}
+
+  \cvevent{Project 1}{Funding agency/institution}{}{}
+  \begin{itemize}
+    \item Details
+  \end{itemize}
+
+  \divider
+
+  \cvevent{Project 2}{Funding agency/institution}{Project duration}{}
+  A short abstract would also work.
+
+  \medskip
+
+  \switchcolumn
+
+  \cvsection{\faUser About}
+
+  \begin{quote}
+    ``I have been studying at INSA Rouen since
+    2021. Passionate since always
+    to everything related to computers, I
+    would like to become an engineer in this
+    field.
+    
+    I am currently looking for an internship abroad (between 1 and 2 months) in I.T. from June 2024.
+    
+    I have a driving license.''
+  \end{quote}
+
+  \cvsection{\faThumbsUp Hobbies}
+
+  \cvachievement{\faMicrochip}{I.T. \& electronic}{I spend the majority of my free time doing IT and electronics projects.}
+
+  \divider
+
+  \cvachievement{\faSubway}{Scale modeling}{I have been building a model railway with my father.}
+  
+  \divider
+  
+  \cvachievement{\faMusic}{Music}{I listen to a lot of music and play piano.}
+
+  \cvsection{\faTools Strengths}
+
+  \cvtag{Hard-working}
+  \cvtag{Self-taugth}
+  \cvtag{Persistent}
+  \cvtag{Thorough}\\
+
+  \divider
+
+  \cvtag{C}
+  \cvtag{C++}
+  \cvtag{Rust}
+  \cvtag{Free pascal}
+  \cvtag{Python}
+  \cvtag{\LaTeX}
+  \cvtag{Linux}
+  \cvtag{Embedded Systems}
+
+  \cvsection{\faGlobe Languages}
+
+  \textcolor{emphasis}{\textbf{French}} \hfill \textbf{Native}\\
+
+  \divider
+
+  \textcolor{emphasis}{\textbf{English}} \hfill \textbf{Fluent (C1)}\\
+  
+  \divider
+
+  \textcolor{emphasis}{\textbf{Spanish}} \hfill \textbf{Basic (A1)}\\
+
+  \divider
+
+  \textcolor{emphasis}{\textbf{German}} \hfill \textbf{Basic (A1)}\\
+
+\end{paracol}
+
+\end{document}
