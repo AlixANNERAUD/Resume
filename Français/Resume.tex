@@ -1,0 +1,178 @@
+\RequirePackage[2024-05-01]{latexrelease}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{../AltaCV/altacv}
+
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+ 
+\usepackage{paracol}
+
+\ifxetexorluatex
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+\definecolor{LightGrey}{HTML}{000000} 
+\definecolor{Blue}{HTML}{1F7F9F}
+\definecolor{Purple}{HTML}{3C3744}
+\definecolor{Amber}{HTML}{FFBF00}
+
+\colorlet{name}{Blue}
+\colorlet{tagline}{Blue}
+\colorlet{heading}{Blue}
+\colorlet{headingrule}{Amber}
+\colorlet{subheading}{Blue}
+\colorlet{accent}{Blue}
+\colorlet{emphasis}{Blue}
+\colorlet{body}{Purple}
+
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+
+\begin{document}
+\name{Alix ANNERAUD}
+\tagline{Étudiant en informatique de 21 ans à l'INSA de Rouen Normandie.}
+
+%\photoL{2.8cm}{Photo transparente.png}
+
+\personalinfo{
+  \printinfo{\faGlobe}{\url{https://alix.anneraud.fr}}
+  \email{alix@anneraud.fr}
+  \phone{+33 7 81 85 08 69}
+  \github{AlixANNERAUD}
+  \linkedin{Alix-ANNERAUD}
+  %\location{Rouen, France}\\
+}
+
+\makecvheader
+
+\columnratio{0.6}
+
+\begin{paracol}{2}
+  \cvsection{\faUser À propos}
+
+  \begin{quote}
+    ``Actuellement à la recherche d'un \textbf{stage en informatique à l'étranger} d'au moins 10 semaines entre mi-mai et août 2025 pour acquérir une expérience internationale et améliorer mes compétences.
+    Je cherche également un \textbf{contrat de professionnalisation} à partir de septembre 2025.``
+  \end{quote}
+
+  \cvsection{\faBriefcase Expérience}
+
+  \cvevent{Stage}{Université de New York (NYU)}{Juin 2024 -- Août 2024}{New York, USA}
+
+  Projet de localisation de sources de gaz (GSL) avec capteurs mobiles et fixes.
+  
+  \begin{itemize}
+    \item Simulations de mécanique des fluides (loi de Fick) et algorithmes de localisation.
+    \item Traitement du signal, analyse de données et visualisation avec Python.
+    \item Développement de dispositifs IoT pour la collecte et transmission de données en C++.
+  \end{itemize}
+  \divider
+
+  \cvevent{Assistant au service des relations entreprises}{INSA de Rouen Normandie}{Septembre 2021 -- Juin 2024}{Rouen, France}
+
+  \textbf{Rôle polyvalent d'assistant} axé sur la gestion de données, la prise de contact avec des entreprises, la gestion des dossiers étudiants et les enquêtes auprès des anciens pour la certification des cours.
+
+  \divider
+
+  \cvevent{Stage sur ligne de production}{Renault - Usine de Cléon}{Juin 2022 (1 mois)}{Cléon, France}
+
+  Assemblage de stators et rotors pour moteurs électriques.
+
+  \smallskip
+
+  \cvsection{\faLightbulb Projets}
+
+  \cvevent{Xila}{\url{https://xila.dev}}{}{}
+  Développement en cours d'un système d'exploitation simple pour microcontrôleurs, initialement écrit en C++.
+  Je réécris actuellement une partie du code en Rust pour améliorer les performances et la sécurité.
+
+  \divider
+
+  \cvevent{Cartographie évidentielle (EOGM)}
+  {\url{https://github.com/AlixANNERAUD/Evidential_occupancy_map}}
+  {}
+  {}
+
+  Basé sur un article de notre professeur sur la théorie de Dempster-Shafer en robotique, nous avons développé un algorithme en temps réel pour cartographier les espaces libres et occupés avec LiDAR, IMU et GPS.
+  Développé pour ROS en C++ et optimisé pour la vitesse et l'efficacité avec des techniques de gestion de mémoire, de vectorisation et de parallélisation.
+  
+  \medskip
+
+  \switchcolumn
+
+  \cvsection{\faGraduationCap Formation}
+
+  \cvevent{Diplôme d'ingénieur en informatique}{INSA de Rouen Normandie}{Sept 2021 -- En cours}{Rouen, France}
+
+  \divider
+
+  \cvevent{Baccalauréat scientifique (section européenne)}{Lycée Jean-Paul II}{2021}{Rouen, France}
+  Mention très bien.
+
+  \divider
+
+  \cvevent{Cambridge B1 Preliminary}{}{2018}{}
+
+  \smallskip
+
+  \cvsection{\faThumbsUp Loisirs}
+
+  \cvachievement{\faMicrochip}{Informatique et électronique}{Passionné par l'informatique et l'électronique depuis l'enfance, je souhaite devenir ingénieur dans ce domaine.}
+
+  \divider
+
+  \cvachievement{\faSubway}{Modélisme}{Construction d'un réseau de trains miniatures avec mon père.}
+
+  \divider
+
+  \cvachievement{\faMusic}{Musique}{Je m'intéresse à de nombreux styles musicaux et je joue du piano.}
+
+  \cvsection{\faTools Compétences}
+
+  \cvtag{Travailleur}
+  \cvtag{Autodidacte}
+  \cvtag{Persévérant}
+  \cvtag{Minutieux}
+  \cvtag{Permis de conduire}
+  \\
+
+  \divider
+
+  \cvtag{Rust}
+  \cvtag{Python}
+  \cvtag{C}
+  \cvtag{C++}
+  \cvtag{Java}
+  \cvtag{\LaTeX}
+  \cvtag{Linux}
+  \cvtag{Systèmes embarqués}
+
+  \cvsection{\faGlobe Langues}
+
+  \textcolor{emphasis}{\textbf{Français}} \hfill \textbf{Langue maternelle}\\
+
+  \divider
+
+  \textcolor{emphasis}{\textbf{Anglais}} \hfill \textbf{Courant (C1)}\\
+
+  \divider
+
+  \textcolor{emphasis}{\textbf{Espagnol}} \hfill \textbf{Basique (A2)}\\
+
+  \divider
+
+  \textcolor{emphasis}{\textbf{Allemand}} \hfill \textbf{Basique (A2)}\\
+
+\end{paracol}
+
+\end{document}
