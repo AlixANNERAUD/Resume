@@ -65,9 +65,10 @@ jobs:
           cp -r Français/Resume.pdf public/Resume-Français.pdf
 
       - name: Upload | Pages artifact
-        uses: actions/upload-artifact@v4
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: public
 
   # Deployment job
   deploy:
