@@ -41,7 +41,7 @@ jobs:
       - name: Build | Resume (English)
         uses: xu-cheng/latex-action@v3
         with:     
-          working_directory: ./Resume/English
+          working_directory: ./English
           root_file: Resume.tex
           latexmk_shell_escape: true
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
@@ -49,7 +49,7 @@ jobs:
       - name: Build | Resume (Français)
         uses: xu-cheng/latex-action@v3
         with:
-          working_directory: ./Resume/Français
+          working_directory: ./Français
           root_file: Resume.tex
           latexmk_shell_escape: true
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
