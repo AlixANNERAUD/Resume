@@ -1,0 +1,82 @@
+# Sample workflow for building and deploying a Hugo site to GitHub Pages
+name: Deploy latex resume to GitHub Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.120.4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+     
+      - name: Build | Resume (English)
+        uses: xu-cheng/latex-action@v3
+        with:     
+          working_directory: ./Resume/English
+          root_file: Resume.tex
+          latexmk_shell_escape: true
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+     
+      - name: Build | Resume (Français)
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: ./Resume/Français
+          root_file: Resume.tex
+          latexmk_shell_escape: true
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+    
+      - name: Setup | GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v4
+
+      - name: Setup | Move PDFs to public
+        run: |
+          mkdir -p public
+          cp -r Resume/English/Resume.pdf public/Resume-English.pdf
+          cp -r Resume/Français/Resume.pdf public/Resume-Français.pdf
+
+      - name: Upload | Pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./public
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy | GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3
