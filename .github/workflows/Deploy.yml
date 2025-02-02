@@ -61,8 +61,8 @@ jobs:
       - name: Setup | Move PDFs to public
         run: |
           mkdir -p public
-          cp -r English/Resume.pdf public/Resume-English.pdf
-          cp -r Français/Resume.pdf public/Resume-Français.pdf
+          cp -r English/Resume.pdf public/Resume.english.pdf
+          cp -r Français/Resume.pdf public/Resume.français.pdf
 
       - name: Upload | Pages artifact
         id: deployment
