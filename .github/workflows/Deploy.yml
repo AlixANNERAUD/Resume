@@ -41,7 +41,7 @@ jobs:
       - name: Build | Resume (English)
         uses: xu-cheng/latex-action@v3
         with:     
-          working_directory: ./English
+          working_directory: English
           root_file: Resume.tex
           latexmk_shell_escape: true
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
@@ -49,7 +49,7 @@ jobs:
       - name: Build | Resume (Français)
         uses: xu-cheng/latex-action@v3
         with:
-          working_directory: ./Français
+          working_directory: Français
           root_file: Resume.tex
           latexmk_shell_escape: true
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
@@ -61,8 +61,8 @@ jobs:
       - name: Setup | Move PDFs to public
         run: |
           mkdir -p public
-          cp -r Resume/English/Resume.pdf public/Resume-English.pdf
-          cp -r Resume/Français/Resume.pdf public/Resume-Français.pdf
+          cp -r English/Resume.pdf public/Resume-English.pdf
+          cp -r Français/Resume.pdf public/Resume-Français.pdf
 
       - name: Upload | Pages artifact
         uses: actions/upload-artifact@v4
