@@ -1,20 +1,21 @@
 \documentclass[10pt,a4paper,ragged2e,withhyper]{../AltaCV/altacv}
 
 \geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
- 
+
 \usepackage{paracol}
+\usepackage{hyperref}
 
 \ifxetex
-  \setmainfont{Roboto Slab}
-  \setsansfont{Lato}
-  \renewcommand{\familydefault}{\sfdefault}
+\setmainfont{Roboto Slab}
+\setsansfont{Lato}
+\renewcommand{\familydefault}{\sfdefault}
 \else
-  \usepackage[rm]{roboto}
-  \usepackage[defaultsans]{lato}
-  \renewcommand{\familydefault}{\sfdefault}
+\usepackage[rm]{roboto}
+\usepackage[defaultsans]{lato}
+\renewcommand{\familydefault}{\sfdefault}
 \fi
 
-\definecolor{LightGrey}{HTML}{000000} 
+\definecolor{LightGrey}{HTML}{000000}
 \definecolor{Blue}{HTML}{1F7F9F}
 \definecolor{Purple}{HTML}{3C3744}
 \definecolor{Amber}{HTML}{FFBF00}
@@ -48,7 +49,7 @@
   \phone{+33 7 81 85 08 69}
   \github{AlixANNERAUD}
   \linkedin{Alix-ANNERAUD}
-  %\location{Rouen, France}\\
+  \location{Rouen, France}
 }
 
 \makecvheader
@@ -59,49 +60,57 @@
   \cvsection{\faUser À propos}
 
   \begin{quote}
-    ``Actuellement à la recherche d'un \textbf{stage en informatique à l'étranger} d'au moins 10 semaines entre mi-mai et août 2025 pour acquérir une expérience internationale et améliorer mes compétences.
-    Je cherche également un \textbf{contrat de professionnalisation} à partir de septembre 2025.``
+    ``Actuellement à la recherche d'un \textbf{contrat de professionnalisation} à partir de septembre 2025.
+    Je souhaite intégrer une entreprise dynamique pour appliquer mes compétences en ingénierie logiciel et relever des défis techniques concrets.
+    ``
   \end{quote}
 
   \cvsection{\faBriefcase Expérience}
 
-  \cvevent{Stagaire en recherche}{Université de New York (NYU)}{Juin 2024 -- Août 2024}{New York, USA}
-  Projet de localisation de sources de gaz (GSL) avec capteurs mobiles et fixes.
+  \cvevent{Stagiaire en ingénérie logicielle}{Amazon Espagne}{Mai -- Août 2025}{Madrid, Espagne}
 
-\begin{itemize}
-  \item \textbf{Simulations de mécanique des fluides} et \textbf{algorithmes de localisation}.
-  \item \textbf{Traitement du signal} et \textbf{analyse de données} en Python.
-  \item Développement de dispositifs IoT en C++.
-\end{itemize}
+  \divider
+
+  \cvevent{Stagaire en recherche}{Université de New York (NYU)}{Juin -- Août 2024}{New York, USA}
+  Projet de localisation de sources de gaz (GSL) avec capteurs mobiles et fixes:
+
+  \begin{itemize}
+    \item \textbf{Simulations de fluides} et \textbf{algorithmes de localisation}.
+    \item \textbf{Traitement du signal} et \textbf{analyse de données} en Python.
+    \item Conception et fabrication de capteurs IoT en C++.
+  \end{itemize}
+
   \divider
 
   \cvevent{Assistant au service des relations entreprises}{INSA de Rouen Normandie}{Septembre 2021 -- Juin 2024}{Rouen, France}
 
-  \textbf{Rôle polyvalent d'assistant} axé sur la gestion de données, la prise de contact avec des entreprises, la gestion des dossiers étudiants et les enquêtes auprès des anciens pour la certification des cours.
+  \textbf{Assistant polyvalent} en gestion de données, relations entreprises et suivi des dossiers étudiants.
 
   \divider
 
-  \cvevent{Stage sur ligne de production}{Renault - Usine de Cléon}{Juin 2022 (1 mois)}{Cléon, France}
-
-  Assemblage de stators et rotors pour moteurs électriques.
-
-  \smallskip
+  \cvevent{Stagiaire sur une ligne de fabrication de rotor et stator}{Renault - Usine Ampère de Cléon}{Juin 2022 (1 mois)}{Cléon, France}
 
   \cvsection{\faLightbulb Projets}
+  
+  \begin{minipage}[t]{0.49\linewidth}
+    \cvevent{\normalsize Xila - \underline{\url{https://xila.dev}}}{}{}{}
+    {\small \cvtag{Rust}\cvtag{C} - Système d'exploitation minimaliste et sécurisé pour microcontrôleurs, prenant en charge l’exécution d’applications WASM.}
 
-  \cvevent{Xila}{\url{https://xila.dev}}{}{}
-    Développement d'un système d'exploitation simple pour microcontrôleurs, initialement en C++.
-    Réécriture partielle en Rust pour améliorer les performances et et la sécurité.
+    \divider
 
-  \divider
+    \cvevent{\normalsize Chef PIC - CHB}{}{}{}
+    {\small \cvtag{Vue.js}\cvtag{Django}\cvtag{NLP} - Chef de projet dans une équipe agile pour le développement d'une application web dédiée à la gestion des prescriptions des pharmaciens du Centre Henri Becquerel.}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.49\linewidth}
+    \cvevent{\normalsize Deez'Nalyzer - \underline{\href{https://github.com/AlixANNERAUD/Deez_Nalyzer}{GitHub}}}{}{}{}
+    {\small \cvtag{Vue.js}\cvtag{Django}\cvtag{ML} - Application web pour générer des playlists et classifier des morceaux via l’analyse des MP3 et des habitudes d’écoute avec l’API Deezer.}
 
-  \cvevent{Cartographie évidentielle (EOGM)}
-  {\url{https://github.com/AlixANNERAUD/Evidential_occupancy_map}}
-  {}
-  {}
+    \divider
 
-  À partir des recherches de notre professeur sur l’application de la théorie de Dempster-Shafer en robotique, nous avons développé un algorithme en temps réel qui génère une carte d'occupation via des capteurs LiDAR, IMU et GPS embarqués.
-  Conçu en C++ pour ROS, il est optimisé pour la rapidité et l’efficacité grâce à des techniques d'optimisation de mémoire, vectorisation et parallélisation des calculs.
+    \cvevent{\normalsize Cartographie - \underline{\href{https://github.com/AlixANNERAUD/Evidential_occupancy_map}{GitHub}}}{}{}{}
+    {\small \cvtag{C++}\cvtag{ROS} - Implémentation d’un algorithme de cartographie évidentielle (EOGM) basé sur la théorie de Dempster-Shafer, optimisé pour le temps réel.}
+  \end{minipage}
 
   \medskip
 
@@ -120,8 +129,6 @@
 
   \cvevent{Cambridge B1 Preliminary}{}{2018}{}
 
-  \smallskip
-
   \cvsection{\faThumbsUp Loisirs}
 
   \cvachievement{\faMicrochip}{Informatique et électronique}{Passionné par l'informatique et l'électronique depuis l'enfance, je souhaite devenir ingénieur dans ce domaine.}
@@ -129,10 +136,6 @@
   \divider
 
   \cvachievement{\faSubway}{Modélisme}{Construction d'un réseau de trains miniatures avec mon père.}
-
-  \divider
-
-  \cvachievement{\faMusic}{Musique}{Je m'intéresse à de nombreux styles musicaux et je joue du piano.}
 
   \cvsection{\faTools Compétences}
 
@@ -153,9 +156,11 @@
   \cvtag{Django}
   \cvtag{Vue.js}
   \cvtag{Linux}
+  \cvtag{Deep learning}
   \cvtag{Traitement d'images}
   \cvtag{Systèmes embarqués}
-  \cvtag{Apprentissage profond}
+  \cvtag{Docker}
+  \cvtag{CI/CD}
 
   \cvsection{\faGlobe Langues}
 
