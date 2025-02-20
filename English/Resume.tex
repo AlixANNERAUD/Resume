@@ -1,20 +1,20 @@
 \documentclass[10pt,a4paper,ragged2e,withhyper]{../AltaCV/altacv}
 
 \geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
- 
+
 \usepackage{paracol}
 
 \ifxetex
-  \setmainfont{Roboto Slab}
-  \setsansfont{Lato}
-  \renewcommand{\familydefault}{\sfdefault}
+\setmainfont{Roboto Slab}
+\setsansfont{Lato}
+\renewcommand{\familydefault}{\sfdefault}
 \else
-  \usepackage[rm]{roboto}
-  \usepackage[defaultsans]{lato}
-  \renewcommand{\familydefault}{\sfdefault}
+\usepackage[rm]{roboto}
+\usepackage[defaultsans]{lato}
+\renewcommand{\familydefault}{\sfdefault}
 \fi
 
-\definecolor{LightGrey}{HTML}{000000} 
+\definecolor{LightGrey}{HTML}{000000}
 \definecolor{Blue}{HTML}{1F7F9F}
 \definecolor{Purple}{HTML}{3C3744}
 \definecolor{Amber}{HTML}{FFBF00}
@@ -53,27 +53,28 @@
 
 \makecvheader
 
-
 \columnratio{0.6}
 
 \begin{paracol}{2}
   \cvsection{\faUser About}
 
   \begin{quote}
-    ``Currently seeking an \textbf{IT internship abroad} for at least 10 weeks between mid-May and August 2025 to gain international experience and enhance my skills.
-    Also looking for a \textbf{professional training contract} starting in September 2025.``
+    ``Currently seeking a \textbf{work-study contract} starting in September 2025.
+    I am eager to join a dynamic company to apply my software engineering skills and tackle real-world technical challenges.
   \end{quote}
 
   \cvsection{\faBriefcase Experience}
 
-  \cvevent{Research Intern}{New York University (NYU)}{June 2024 -- August 2024}{New York, USA}
+  \cvevent{Software engineering intern}{Amazon Spain}{May -- August 2025}{Madrid, Spain}
 
-  Research project in gas source localisation (GSL) using mobile and fixed sensors.
-  
+  \divider
+
+  \cvevent{Research intern}{New York University (NYU)}{June 2024 -- August 2024}{New York, USA}
+  Project on Gas Source Localization (GSL) with Mobile and Fixed Sensors:
   \begin{itemize}
-    \item Conducted research on gas source diffusion using \textbf{fluid mechanics simulations} (Fick's law) and \textbf{localisation algorithms}.
-    \item Performed \textbf{signal processing} and \textbf{data analysis} to interpret sensor readings using Python.
-    \item Developed IoT devices for data collection and transmission in C++.
+    \item Fluid simulations and localization algorithms.
+    \item Signal processing and data analysis in Python.
+    \item Design and development of IoT sensors in C++.
   \end{itemize}
 
   \divider
@@ -84,27 +85,31 @@
 
   \divider
 
-  \cvevent{Intern on production line}{Renault - Cléon factory}{June 2022 (1 month)}{Cléon, France}
-
-  Assembled rotor and stator for electric motor production.
+  \cvevent{Intern on rotor and stator production line}{Renault - Cléon factory}{June 2022 (1 month)}{Cléon, France}
 
   \smallskip
 
   \cvsection{\faLightbulb Projects}
 
-  \cvevent{Xila}{\url{https://xila.dev}}{}{}
-  Currently developing a simple operating system tailored for microcontrollers, originally written in C++.
-  I am in the process of rewriting a section of the codebase in Rust to improve performance and security.
+  \begin{minipage}[t]{0.49\linewidth}
+    \cvevent{\normalsize Xila - \underline{\url{https://xila.dev}}}{}{}{}
+    {\small \cvtag{Rust}\cvtag{C} - A minimalist and secure operating system for microcontrollers, capable of running WASM applications.}
 
-  \divider
+    \divider
 
-  \cvevent{Evidential occupancy grid mapping (EOGM)}
-  {\url{https://github.com/AlixANNERAUD/Evidential_occupancy_map}}
-  {}
-  {}
-  Based on our professor’s research paper on pratical application of the Dempster-Shafer theory in robotics, we developed a real-time algorithm that creates maps of free and occupied spaces in a robot’s environment using onboard LiDAR, IMU and GPS sensors.
-  It was developed for ROS in C++.
-  It's fast and efficient due to various memory optimizations, vectorization and parallelization techniques. 
+    \cvevent{\normalsize Chef PIC - CHB}{}{}{}
+    {\small \cvtag{Vue.js}\cvtag{Django}\cvtag{NLP} - Project manager in an agile team for the development of a web application dedicated to managing pharmacists' prescriptions at the Centre Henri Becquerel.}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.49\linewidth}
+    \cvevent{\normalsize Deez'Nalyzer - \underline{\href{https://github.com/AlixANNERAUD/Deez_Nalyzer}{GitHub}}}{}{}{}
+    {\small \cvtag{Vue.js}\cvtag{Django}\cvtag{ML} - A web application for generating playlists and classifying tracks by analyzing MP3 files and listening habits using the Deezer API.}
+
+    \divider
+
+    \cvevent{\normalsize Cartographie - \underline{\href{https://github.com/AlixANNERAUD/Evidential_occupancy_map}{GitHub}}}{}{}{}
+    {\small \cvtag{C++}\cvtag{ROS} -  Implementation of an evidential mapping algorithm (EOGM) based on Dempster-Shafer theory, optimized for real-time performance.}
+  \end{minipage}
 
   \medskip
 
@@ -133,10 +138,6 @@
 
   \cvachievement{\faSubway}{Scale modeling}{I have been building a model railway with my father.}
 
-  \divider
-
-  \cvachievement{\faMusic}{Music}{I listen to a lot of music styles and play piano.}
-
   \cvsection{\faTools Strengths}
 
   \cvtag{Hard-working}
@@ -159,6 +160,8 @@
   \cvtag{Image processing}
   \cvtag{Embedded systems}
   \cvtag{Deep learning}
+  \cvtag{Docker}
+  \cvtag{CI/CD}
 
   \cvsection{\faGlobe Languages}
 
