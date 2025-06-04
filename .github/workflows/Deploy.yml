@@ -38,6 +38,12 @@ jobs:
         with:
           submodules: recursive
      
+      - name: Check | LaTeX formatting
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: "*.tex"
+          args: -interaction=nonstopmode -halt-on-error -file-line-error -draftmode
+     
       - name: Build | Resume (English)
         uses: xu-cheng/latex-action@v3
         with:     
